@@ -30,10 +30,10 @@
                         <a class="nav-link" href="nosotros.html">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="galeria.html">Galería</a>
+                        <a class="nav-link" href="galeria.html">Galería</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Servicios
                         </a>
@@ -48,27 +48,43 @@
         </div>
     </nav>
 
-    <main class="my-5">
-        <h2 class="text-center mt-5 pt-5">NUESTRA GALERÍA</h2>
-        <section>
-            <img src="galeria/img00.jpg" alt="" class="img-galeria">
-            <img src="galeria/img01.jpg" alt="" class="img-galeria">
-            <img src="galeria/img02.jpg" alt="" class="img-galeria">
-            <img src="galeria/img03.jpg" alt="" class="img-galeria">
-            <img src="galeria/img04.jpg" alt="" class="img-galeria">
-            <img src="galeria/img05.jpg" alt="" class="img-galeria">
-            <img src="galeria/img06.jpg" alt="" class="img-galeria">
-            <img src="galeria/img07.jpg" alt="" class="img-galeria">
-            <!-- 
-            <div class="modelo">
-                <img src="galeria/img00.jpg" alt="" class="img-modelo">
-                <div class="cerrar">
-                    X
+    <div class="mapa mt-5 pt-2">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1379.5521095360396!2d-77.03110419110679!3d-12.046093845864545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b5d5aa7eb1%3A0x16061e0b481e22aa!2sPlaza%20Mayor%20de%20Lima!5e0!3m2!1ses!2spe!4v1791311661949!5m2!1ses!2spe"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+    <div class="contactos my-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
                 </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="">
+                                <p>Apellidos y Nombres</p>
+                                <input type="text" class="form-control" placeholder="Ingresa tus nombres">
+                                <br>
+                                <p>Dirección</p>
+                                <input type="text" class="form-control" placeholder="Ingresa tu dirección">
+                                <br>
+                                <p>Correo</p>
+                                <input type="email" placeholder="Ingresa tu Correo" class="form-control">
+                                <br>
+                                <p>Comentarios</p>
+                                <textarea name="" id="" cols="30" class="form-control"></textarea>
+                                <br>
+                                <button class="form-control bg-dark text-white">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            -->
-        </section>
-    </main>
+        </div>
+    </div>
 
     <div class="social bg-dark py-5">
         <div class="redes text-white text-center" style="font-size: 30px;">
@@ -97,20 +113,20 @@
         /*Mostrar Galería*/
         $(".img-galeria").click(function (a) {
             let img = a.target.src;
-            let modelo = '<div class="modelo"><img src = " '+img+' " alt = "" class="img-modelo" ><div class="cerrar">X</div></div>';
-        $("body,html").append(modelo);
+            let modelo = '<div class="modelo"><img src = " ' + img + ' " alt = "" class="img-modelo" ><div class="cerrar">X</div></div>';
+            $("body,html").append(modelo);
 
-        /*Booth Galería*/
-        $(".cerrar").click(function(){
-            $(".modelo").remove();
-        })
-        
-        /*Tecla escape para eliminar imagen*/
-        $("body,html").keyup(function(e){
-            if(e.which==27){
-                $(".modelo").hide()
-            }
-        })
+            /*Booth Galería*/
+            $(".cerrar").click(function () {
+                $(".modelo").remove();
+            })
+
+            /*Tecla escape para eliminar imagen*/
+            $("body,html").keyup(function (e) {
+                if (e.which == 27) {
+                    $(".modelo").hide()
+                }
+            })
 
         });
     </script>
